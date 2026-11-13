@@ -16,6 +16,8 @@
      Astuce : pour imprimer un seul mois, décocher toutes les sections sauf
      « 12 mois ». Pour imprimer les fiches d'étude d'une seule sourate, réimprimer
      uniquement la page voulue depuis le dialogue d'impression.
+
+  Version iPad (4:3, navigation + cases interactives) : quran-planner-2027-ipad.html
 -->
 <style>
   @page { size: A4; margin: 12mm; }
@@ -130,7 +132,7 @@
 
   /* ---------- Index sourates ---------- */
   table.surah th{ text-align:left; }
-  table.surah td{ height:7.4mm; }
+  table.surah td{ height:5.8mm; padding:.6mm 1.5mm; font-size:3.3mm; }
   table.surah td.num{ color:var(--gold); font-family:'Avenir Next',Arial,sans-serif; font-weight:bold; }
   table.surah td.name{ font-weight:bold; color:var(--green); }
   table.surah td.ayat{ text-align:center; color:var(--muted); }
@@ -145,7 +147,7 @@
   .sheet-head .nm .cnt{ font-size:3.4mm; color:var(--muted); font-style:italic; }
 
   /* ---------- 99 noms / prophètes ---------- */
-  table.names td{ height:7.6mm; }
+  table.names td{ height:4.4mm; padding:.4mm 1mm; font-size:3.2mm; }
   table.names td.num{ text-align:center; color:var(--gold); font-weight:bold; font-family:'Avenir Next',Arial,sans-serif; }
 
   /* ---------- Duas ---------- */
@@ -211,7 +213,7 @@
     <div style="font-size:3.6mm; line-height:1.6;">
       <b>Impression :</b> ouvrir ce fichier dans Safari &rarr; barre verte &rarr; choisir les sections &rarr;
       « Imprimer » (A4, recto ou recto-verso). 225 pages au total : sélectionne les sections utiles
-      pour économiser le papier.
+      pour économiser le papier. Version iPad (4:3, cases interactives) : <b>quran-planner-2027-ipad.html</b>.
     </div>
   </div>
   <div class="footer"><span>Quran Planner 2027 &bull; À mon rythme, avec intention</span><span class="pnum"></span></div>
@@ -278,9 +280,9 @@
   ["Al-Falaq",5,"الفلق"],["An-Nas",6,"الناس"]
   ];
 
-  var pageNum = 1; // couverture = page 1 (non numérotée)
+  var pageNum = 1;
   document.querySelector("#start .pnum").textContent = pad(2);
-  pageNum = 2; // couverture + page "start" déjà numérotées
+  pageNum = 2;
 
   function pad(n){ return (n<10?"00":n<100?"0":"") + n; }
   function inc(){ pageNum++; return pad(pageNum); }

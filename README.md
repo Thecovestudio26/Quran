@@ -5,14 +5,39 @@ Deux outils pour un journaling spirituel quotidien :
 ```
 quran-journal/
 ├── planner-imprimable/
-│   └── planner-coran-a4.html     # planner A4 prêt à imprimer (9 pages, FR)
+│   ├── quran-planner-2027.html     # planner annuel 2027 complet (225 pages, FR)
+│   └── planner-coran-a4.html        # planner A4 mensuel compact (9 pages, FR)
 └── app-ipad/
-    ├── QuranJournal.xcodeproj/   # projet Xcode (SwiftUI + SwiftData, iOS 17+)
-    ├── QuranJournal/             # sources de l'app
-    └── tools/generate_project.py # régénère le pbxproj + les icônes
+    ├── QuranJournal.xcodeproj/      # projet Xcode (SwiftUI + SwiftData, iOS 17+)
+    ├── QuranJournal/                 # sources de l'app
+    └── tools/generate_project.py    # régénère le pbxproj + les icônes
 ```
 
-## 1. Planner imprimable (`planner-imprimable/planner-coran-a4.html`)
+## 1. Quran Planner 2027 (`planner-imprimable/quran-planner-2027.html`)
+
+Planner annuel complet de 225 pages en français, fidèle au modèle « Quran Planner 2027 » :
+
+- **01 My Year with the Quran** : vision annuelle (intention, objectifs, mot de l'année,
+  Q1-Q4), vue d'ensemble des 12 calendriers 2027 et bilan de fin d'année.
+- **02 114-Surah Index** : les 114 sourates (nom, nombre d'ayat) avec suivi
+  lecture / étude / mémorisation / révision.
+- **03 Monthly & Weekly Planning** : 12 mois × 3 pages (focus du mois + calendrier,
+  tracker coranique quotidien, bilan du mois) et 52 plannings hebdomadaires.
+- **04 Hifdh & Revision** : parcours de Hifdh libre, suivi Juz Amma (J+1 / J+7 / J+30)
+  et 4 plannings de révision espacée.
+- **05 Study Sheets** : 114 fiches d'étude et de réflexion (contexte, thèmes,
+  verset marquant, application, questions).
+- **06 Connect with Allah** : du'as, 99 noms d'Allah, prophètes du Coran,
+  gratitudes, lettre personnelle.
+
+À l'écran, une barre verte permet de cocher les sections à inclure avant
+d'imprimer (masquée automatiquement à l'impression).
+
+**Imprimer depuis l'iPad :** ouvrir le fichier dans Safari (AirDrop / Fichiers / iCloud)
+→ choisir les sections dans la barre verte → « Imprimer » (A4, recto ou recto-verso).
+Option « Enregistrer en PDF » pour une copie numérique.
+
+## 2. Planner mensuel compact (`planner-imprimable/planner-coran-a4.html`)
 
 Planner A4 en français, 9 pages : couverture, objectifs du mois, calendrier du mois
 (choisir le mois/année en haut de la page 3), suivi des 30 juz, **une page journalière
@@ -23,7 +48,7 @@ exemple remplie**, une page journalière vierge à photocopier, tracker d'habitu
 → Partager → **Imprimer** (format A4, recto ou recto-verso). Option « Enregistrer en PDF »
 pour garder une copie numérique.
 
-## 2. App iPad (`app-ipad/`)
+## 3. App iPad (`app-ipad/`)
 
 App SwiftUI native, optimisée iPad (NavigationSplitView), iOS/iPadOS 17+ (SwiftData) :
 

@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Quran Planner 2027 — Parcours coranique annuel (A4 imprimable)</title>
+<!--
+  QURAN PLANNER 2027 — planner annuel complet (225 pages), structure du modèle
+  « Quran Planner 2027 » (vision annuelle, index 114 sourates, Hifdh, Juz Amma,
+  12 mois × 3 pages, 52 semaines, révisions espacées, 114 fiches d'étude, extras).
+
+  COMMENT IMPRIMER (iPad) :
+  1. Ouvrir ce fichier dans Safari (AirDrop / Fichiers / iCloud).
+  2. Dans la barre verte en haut de l'écran, choisir les sections à imprimer
+     (tout est coché par défaut) puis appuyer sur « Imprimer ».
+  3. Format A4, marges par défaut, recto ou recto-verso.
+     Astuce : pour imprimer un seul mois, décocher toutes les sections sauf
+     « 12 mois ». Pour imprimer les fiches d'étude d'une seule sourate, réimprimer
+     uniquement la page voulue depuis le dialogue d'impression.
+-->
+<style>
+  @page { size: A4; margin: 12mm; }
+  :root{
+    --green:#14532d; --green-soft:#e7efe8; --gold:#b45309; --gold-soft:#fdf3e3;
+    --cream:#faf6ee; --ink:#1f2937; --muted:#6b7280; --line:#cfc8b8;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{ font-family: Georgia,'Times New Roman',serif; color:var(--ink); background:#e5e5e5; }
+  @media screen{ body{ padding:14mm 0 0 0; } .page{ box-shadow:0 2mm 6mm rgba(0,0,0,.25); margin:0 auto 8mm auto; background:#fff; } }
+  .page{
+    width:186mm; height:273mm; padding:6mm 8mm 9mm 8mm;
+    page-break-after:always; break-after:page; overflow:hidden; position:relative;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .grp[hidden], .page[hidden]{ display:none; }
+  @media print{ .grp.print-off{ display:none; } body{ padding:0; background:#fff; } }
+
+  /* ---------- Barre d'impression (écran uniquement) ---------- */
+  #bar{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    background:#14532d; color:#fff; font-family:'Avenir Next','Helvetica Neue',Arial,sans-serif;
+    font-size:13px; padding:8px 14px; display:flex; flex-wrap:wrap; gap:10px 16px; align-items:center;
+    box-shadow:0 2px 8px rgba(0,0,0,.3);
+  }
+  #bar b{ font-size:14px; letter-spacing:.5px; }
+  #bar label{ display:inline-flex; align-items:center; gap:5px; cursor:pointer; }
+  #bar button{
+    font:inherit; background:var(--gold); color:#fff; border:none; border-radius:6px;
+    padding:5px 14px; cursor:pointer; font-weight:bold;
+  }
+  #bar button.ghost{ background:rgba(255,255,255,.15); font-weight:normal; }
+  @media print{ #bar{ display:none; } }
+
+  /* ---------- Typo commune ---------- */
+  h1,h2,h3,.sans{ font-family:'Avenir Next','Helvetica Neue',Arial,sans-serif; }
+  .kicker{
+    font-family:'Avenir Next',Arial,sans-serif; font-size:3mm; letter-spacing:2pt;
+    color:var(--gold); text-transform:uppercase; margin:0 0 1mm 0;
+  }
+  h2.page-title{
+    font-size:8.5mm; color:var(--green); margin:0 0 1.5mm 0; letter-spacing:.4pt;
+    border-bottom:1.2pt solid var(--green); padding-bottom:2mm;
+  }
+  .sub{ color:var(--muted); font-size:3.4mm; margin:1.5mm 0 4mm 0; }
+  .cb{
+    display:inline-block; width:3.8mm; height:3.8mm; border:1.2pt solid var(--green);
+    border-radius:.8mm; vertical-align:-.8mm; background:#fff;
+  }
+  .line{ border-bottom:.6pt solid var(--line); height:7.5mm; }
+  .line.short{ width:60%; }
+  .field{ display:inline-block; border-bottom:.8pt dotted var(--muted); min-width:45mm; height:6mm; }
+  .field.wide{ min-width:90mm; }
+  .box{ border:.8pt solid var(--green); border-radius:2mm; padding:3mm 4mm; background:var(--green-soft); }
+  .box.gold{ border-color:var(--gold); background:var(--gold-soft); }
+  .ar{ font-family:'Traditional Arabic','Amiri','Times New Roman',serif; direction:rtl; }
+  table{ border-collapse:collapse; width:100%; }
+  th,td{ border:.6pt solid var(--line); padding:1.4mm 1.8mm; font-size:3.5mm; }
+  th{ background:var(--green); color:#fff; font-family:'Avenir Next',Arial,sans-serif; font-size:3.2mm; letter-spacing:.3pt; }
+  .small{ font-size:3.2mm; color:var(--muted); }
+  .muted{ color:var(--muted); } .gold{ color:var(--gold); } .green{ color:var(--green); }
+  .row{ margin:2.5mm 0; }
+  .cols{ display:flex; gap:6mm; } .cols > div{ flex:1; }
+  .sect{ margin-top:3mm; }
+  h3.blk{
+    font-size:3.6mm; color:var(--gold); margin:3.5mm 0 1.5mm 0;
+    text-transform:uppercase; letter-spacing:.8pt; border-bottom:.5pt dotted var(--gold); padding-bottom:1mm;
+  }
+  .footer{
+    position:absolute; bottom:3.5mm; left:8mm; right:8mm;
+    font-size:2.8mm; color:var(--muted); display:flex; justify-content:space-between;
+    font-family:'Avenir Next',Arial,sans-serif; letter-spacing:.6pt; text-transform:uppercase;
+  }
+
+  /* ---------- Couverture ---------- */
+  .cover{
+    background:var(--cream); border:2.5pt solid var(--green); outline:1pt solid var(--gold); outline-offset:-4mm;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  }
+  .cover .year{ font-family:'Avenir Next',Arial,sans-serif; font-size:22mm; font-weight:bold; color:var(--gold); letter-spacing:3pt; line-height:1; }
+  .cover h1{ font-size:15mm; color:var(--green); margin:5mm 0 1mm 0; letter-spacing:1.5pt; }
+  .cover .subtitle{ font-size:4.6mm; color:var(--ink); font-style:italic; margin:2mm 0 3mm 0; }
+  .cover .tagline{ font-size:4.4mm; color:var(--gold); font-family:'Avenir Next',Arial,sans-serif; letter-spacing:1.5pt; text-transform:uppercase; margin-top:9mm; }
+  .cover .mantra{ font-size:3.6mm; color:var(--muted); font-style:italic; margin-top:3mm; }
+  .cover .fields{ margin:9mm 0 0 0; font-size:4.4mm; text-align:left; }
+  .cover .fields .row{ margin:4mm 0; }
+
+  /* ---------- Start here ---------- */
+  .toc-item{ display:flex; align-items:baseline; margin:3.2mm 0; }
+  .toc-item .n{
+    font-family:'Avenir Next',Arial,sans-serif; font-weight:bold; color:#fff; background:var(--green);
+    border-radius:1.5mm; padding:.6mm 2.6mm; margin-right:3.5mm; font-size:4.2mm;
+  }
+  .toc-item .t{ font-family:'Avenir Next',Arial,sans-serif; font-size:4.6mm; color:var(--green); font-weight:bold; letter-spacing:.5pt; }
+  .toc-item .d{ font-size:3.6mm; color:var(--muted); margin-left:3mm; font-style:italic; }
+
+  /* ---------- Vue d'ensemble ---------- */
+  .mini-grid{ display:flex; flex-wrap:wrap; gap:5mm; }
+  .mini{ flex:1 1 30%; min-width:0; }
+  .mini h4{ font-family:'Avenir Next',Arial,sans-serif; font-size:4mm; color:var(--green); margin:0 0 1mm 0; }
+  table.minical{ table-layout:fixed; }
+  table.minical th{ padding:.8mm 0; font-size:2.6mm; text-align:center; }
+  table.minical td{ padding:0; height:6.4mm; font-size:2.8mm; text-align:center; border:.4pt solid var(--line); }
+  table.minical td.blank{ background:#f4f2ec; }
+
+  /* ---------- Calendrier du mois ---------- */
+  table.cal th{ font-size:3.4mm; padding:1.6mm; }
+  table.cal td{ height:22mm; vertical-align:top; padding:1mm 1.4mm; font-size:3.5mm; width:14.28%; }
+  table.cal td .d{ font-weight:bold; color:var(--green); font-family:'Avenir Next',Arial,sans-serif; }
+  table.cal td.blank{ background:#f4f2ec; }
+
+  /* ---------- Index sourates ---------- */
+  table.surah th{ text-align:left; }
+  table.surah td{ height:7.4mm; }
+  table.surah td.num{ color:var(--gold); font-family:'Avenir Next',Arial,sans-serif; font-weight:bold; }
+  table.surah td.name{ font-weight:bold; color:var(--green); }
+  table.surah td.ayat{ text-align:center; color:var(--muted); }
+  table.surah td.c{ text-align:center; }
+
+  /* ---------- Fiche d'étude ---------- */
+  .sheet-head{ display:flex; align-items:center; justify-content:space-between; margin:2mm 0 3mm 0; }
+  .sheet-head .num{ font-family:'Avenir Next',Arial,sans-serif; font-size:16mm; font-weight:bold; color:var(--gold); line-height:1; }
+  .sheet-head .nm{ text-align:center; }
+  .sheet-head .nm .lat{ font-family:'Avenir Next',Arial,sans-serif; font-size:6.5mm; font-weight:bold; color:var(--green); }
+  .sheet-head .nm .ar{ font-size:9mm; color:var(--green); line-height:1.4; }
+  .sheet-head .nm .cnt{ font-size:3.4mm; color:var(--muted); font-style:italic; }
+
+  /* ---------- 99 noms / prophètes ---------- */
+  table.names td{ height:7.6mm; }
+  table.names td.num{ text-align:center; color:var(--gold); font-weight:bold; font-family:'Avenir Next',Arial,sans-serif; }
+
+  /* ---------- Duas ---------- */
+  .dua-row{ display:flex; align-items:flex-end; margin:3.2mm 0; font-size:3.7mm; }
+  .dua-row .n{ font-family:'Avenir Next',Arial,sans-serif; font-weight:bold; color:var(--gold); width:7mm; }
+  .dua-row .txt{ flex:1; border-bottom:.6pt solid var(--line); height:6.5mm; }
+  .dua-row .when{ width:28mm; border-bottom:.6pt solid var(--line); height:6.5mm; margin-left:2mm; }
+</style>
+</head>
+<body>
+
+<div id="bar">
+  <b>QURAN PLANNER 2027</b>
+  <label><input type="checkbox" data-sec="sec1" checked> Vision annuelle</label>
+  <label><input type="checkbox" data-sec="sec2" checked> Index 114</label>
+  <label><input type="checkbox" data-sec="sec3" checked> Hifdh &amp; Juz Amma</label>
+  <label><input type="checkbox" data-sec="sec4" checked> 12 mois</label>
+  <label><input type="checkbox" data-sec="sec5" checked> 52 semaines</label>
+  <label><input type="checkbox" data-sec="sec6" checked> Révisions</label>
+  <label><input type="checkbox" data-sec="sec7" checked> 114 fiches d'étude</label>
+  <label><input type="checkbox" data-sec="sec8" checked> Extras</label>
+  <button class="ghost" id="allOn">Tout</button>
+  <button class="ghost" id="allOff">Aucun</button>
+  <button id="printBtn">Imprimer</button>
+</div>
+
+<!-- ============ COUVERTURE ============ -->
+<div class="page cover" id="cover">
+  <svg width="42mm" height="42mm" viewBox="0 0 100 100" aria-hidden="true">
+    <circle cx="46" cy="50" r="34" fill="#b45309"/>
+    <circle cx="60" cy="50" r="30" fill="#faf6ee"/>
+    <polygon fill="#b45309" points="74,32 76.2,38.6 83,38.9 77.7,43.4 79.4,50 74,46.3 68.6,50 70.3,43.4 65,38.9 71.8,38.6"/>
+  </svg>
+  <h1>QURAN PLANNER</h1>
+  <div class="year">2027</div>
+  <div class="subtitle">Mon parcours coranique &bull; Édition 2027</div>
+  <div class="mantra">« Lire avec intention. Comprendre avec profondeur. Mémoriser avec constance. »</div>
+  <div class="tagline">Read &bull; Reflect &bull; Memorise &bull; Revise</div>
+  <div class="fields">
+    <div class="row">Nom : <span class="field wide"></span></div>
+    <div class="row">Mon intention pour 2027 : <span class="field wide"></span></div>
+  </div>
+</div>
+
+<!-- ============ START HERE ============ -->
+<div class="page" id="start">
+  <h2 class="page-title">Comment utiliser ton planner</h2>
+  <div class="sub">START HERE</div>
+  <p style="font-size:4mm; line-height:1.6; margin:2mm 0 5mm 0;">
+    Ce planner est conçu pour accompagner toute ton année 2027. Utilise les pages mensuelles et
+    hebdomadaires pour planifier ton rythme, l'index pour visualiser les 114 sourates, le tracker
+    Hifdh pour toute sourate de ton choix et les fiches d'étude pour approfondir le sens.
+    Les fiches sont des espaces de réflexion personnelle : vérifie les explications religieuses
+    auprès de tafsirs et d'enseignants qualifiés.
+  </p>
+  <div class="toc-item"><span class="n">01</span><span class="t">MY YEAR WITH THE QURAN</span><span class="d">vision annuelle, objectifs, vue d'ensemble 2027</span></div>
+  <div class="toc-item"><span class="n">02</span><span class="t">114-SURAH INDEX</span><span class="d">lecture, étude, mémorisation, révision</span></div>
+  <div class="toc-item"><span class="n">03</span><span class="t">MONTHLY &amp; WEEKLY PLANNING</span><span class="d">12 mois × focus, tracker, bilan + 52 semaines</span></div>
+  <div class="toc-item"><span class="n">04</span><span class="t">HIFDH &amp; REVISION</span><span class="d">parcours de mémorisation, Juz Amma, révisions espacées</span></div>
+  <div class="toc-item"><span class="n">05</span><span class="t">STUDY SHEETS</span><span class="d">114 fiches d'étude et de réflexion</span></div>
+  <div class="toc-item"><span class="n">06</span><span class="t">CONNECT WITH ALLAH</span><span class="d">du'as, 99 noms, prophètes, gratitudes, bilan d'année</span></div>
+  <div class="box gold" style="margin-top:6mm;">
+    <div style="font-size:3.6mm; line-height:1.6;">
+      <b>Impression :</b> ouvrir ce fichier dans Safari &rarr; barre verte &rarr; choisir les sections &rarr;
+      « Imprimer » (A4, recto ou recto-verso). 225 pages au total : sélectionne les sections utiles
+      pour économiser le papier.
+    </div>
+  </div>
+  <div class="footer"><span>Quran Planner 2027 &bull; À mon rythme, avec intention</span><span class="pnum"></span></div>
+</div>
+
+<section class="grp" id="sec1">
+  <div class="page" id="visionPage"></div>
+  <div class="page" id="overviewPage"></div>
+</section>
+
+<section class="grp" id="sec2"></section>
+<section class="grp" id="sec3"></section>
+<section class="grp" id="sec4"></section>
+<section class="grp" id="sec5"></section>
+<section class="grp" id="sec6"></section>
+<section class="grp" id="sec7"></section>
+<section class="grp" id="sec8">
+  <div class="page" id="duasPage"></div>
+  <div class="page" id="names1"></div>
+  <div class="page" id="names2"></div>
+  <div class="page" id="prophetsPage"></div>
+  <div class="page" id="gratitudePage"></div>
+  <div class="page" id="letterPage"></div>
+  <div class="page" id="yearReviewPage"></div>
+</section>
+
+<script>
+(function(){
+  "use strict";
+  var YEAR = 2027;
+  var MONTHS = ["Janvier","Février","Mars","Avril","Mai","Juin","Juillet","Août","Septembre","Octobre","Novembre","Décembre"];
+  var FOOT = "Quran Planner 2027 • À mon rythme, avec intention";
+
+  /* 114 sourates : [translittération, ayat, arabe] */
+  var S = [
+  ["Al-Fatihah",7,"الفاتحة"],["Al-Baqarah",286,"البقرة"],["Ali 'Imran",200,"آل عمران"],["An-Nisa",176,"النساء"],
+  ["Al-Ma'idah",120,"المائدة"],["Al-An'am",165,"الأنعام"],["Al-A'raf",206,"الأعراف"],["Al-Anfal",75,"الأنفال"],
+  ["At-Tawbah",129,"التوبة"],["Yunus",109,"يونس"],["Hud",123,"هود"],["Yusuf",111,"يوسف"],
+  ["Ar-Ra'd",43,"الرعد"],["Ibrahim",52,"إبراهيم"],["Al-Hijr",99,"الحجر"],["An-Nahl",128,"النحل"],
+  ["Al-Isra",111,"الإسراء"],["Al-Kahf",110,"الكهف"],["Maryam",98,"مريم"],["Ta-Ha",135,"طه"],
+  ["Al-Anbiya",112,"الأنبياء"],["Al-Hajj",78,"الحج"],["Al-Mu'minun",118,"المؤمنون"],["An-Nur",64,"النور"],
+  ["Al-Furqan",77,"الفرقان"],["Ash-Shu'ara",227,"الشعراء"],["An-Naml",93,"النمل"],["Al-Qasas",88,"القصص"],
+  ["Al-'Ankabut",69,"العنكبوت"],["Ar-Rum",60,"الروم"],["Luqman",34,"لقمان"],["As-Sajdah",30,"السجدة"],
+  ["Al-Ahzab",73,"الأحزاب"],["Saba",54,"سبأ"],["Fatir",45,"فاطر"],["Ya-Sin",83,"يس"],
+  ["As-Saffat",182,"الصافات"],["Sad",88,"ص"],["Az-Zumar",75,"الزمر"],["Ghafir",85,"غافر"],
+  ["Fussilat",54,"فصلت"],["Ash-Shura",53,"الشورى"],["Az-Zukhruf",89,"الزخرف"],["Ad-Dukhan",59,"الدخان"],
+  ["Al-Jathiyah",37,"الجاثية"],["Al-Ahqaf",35,"الأحقاف"],["Muhammad",38,"محمد"],["Al-Fath",29,"الفتح"],
+  ["Al-Hujurat",18,"الحجرات"],["Qaf",45,"ق"],["Adh-Dhariyat",60,"الذاريات"],["At-Tur",49,"الطور"],
+  ["An-Najm",62,"النجم"],["Al-Qamar",55,"القمر"],["Ar-Rahman",78,"الرحمن"],["Al-Waqi'ah",96,"الواقعة"],
+  ["Al-Hadid",29,"الحديد"],["Al-Mujadilah",22,"المجادلة"],["Al-Hashr",24,"الحشر"],["Al-Mumtahanah",13,"الممتحنة"],
+  ["As-Saff",14,"الصف"],["Al-Jumu'ah",11,"الجمعة"],["Al-Munafiqun",11,"المنافقون"],["At-Taghabun",18,"التغابن"],
+  ["At-Talaq",12,"الطلاق"],["At-Tahrim",12,"التحريم"],["Al-Mulk",30,"الملك"],["Al-Qalam",52,"القلم"],
+  ["Al-Haqqah",52,"الحاقة"],["Al-Ma'arij",44,"المعارج"],["Nuh",28,"نوح"],["Al-Jinn",28,"الجن"],
+  ["Al-Muzzammil",20,"المزمل"],["Al-Muddaththir",56,"المدثر"],["Al-Qiyamah",40,"القيامة"],["Al-Insan",31,"الإنسان"],
+  ["Al-Mursalat",50,"المرسلات"],["An-Naba",40,"النبأ"],["An-Nazi'at",46,"النازعات"],["'Abas",42,"عبس"],
+  ["At-Takwir",29,"التكوير"],["Al-Infitar",19,"الانفطار"],["Al-Mutaffifin",36,"المطففين"],["Al-Inshiqaq",25,"الانشقاق"],
+  ["Al-Buruj",22,"البروج"],["At-Tariq",17,"الطارق"],["Al-A'la",19,"الأعلى"],["Al-Ghashiyah",26,"الغاشية"],
+  ["Al-Fajr",30,"الفجر"],["Al-Balad",20,"البلد"],["Ash-Shams",15,"الشمس"],["Al-Layl",21,"الليل"],
+  ["Ad-Duha",11,"الضحى"],["Ash-Sharh",8,"الشرح"],["At-Tin",8,"التين"],["Al-'Alaq",19,"العلق"],
+  ["Al-Qadr",5,"القدر"],["Al-Bayyinah",8,"البينة"],["Az-Zalzalah",8,"الزلزلة"],["Al-'Adiyat",11,"العاديات"],
+  ["Al-Qari'ah",11,"القارعة"],["At-Takathur",8,"التكاثر"],["Al-'Asr",3,"العصر"],["Al-Humazah",9,"الهمزة"],
+  ["Al-Fil",5,"الفيل"],["Quraysh",4,"قريش"],["Al-Ma'un",7,"الماعون"],["Al-Kawthar",3,"الكوثر"],
+  ["Al-Kafirun",6,"الكافرون"],["An-Nasr",3,"النصر"],["Al-Masad",5,"المسد"],["Al-Ikhlas",4,"الإخلاص"],
+  ["Al-Falaq",5,"الفلق"],["An-Nas",6,"الناس"]
+  ];
+
+  var pageNum = 1; // couverture = page 1 (non numérotée)
+  document.querySelector("#start .pnum").textContent = pad(2);
+  pageNum = 2; // couverture + page "start" déjà numérotées
+
+  function pad(n){ return (n<10?"00":n<100?"0":"") + n; }
+  function inc(){ pageNum++; return pad(pageNum); }
+
+  function esc(t){ return t.replace(/&/g,"&amp;").replace(/</g,"&lt;"); }
+  function lines(n,h){ var h=h||7.5, s=""; for(var i=0;i<n;i++) s+='<div class="line" style="height:'+h+'mm"></div>'; return s; }
+
+  function page(kicker, title, inner, target, extraClass){
+    var div = document.createElement("div");
+    div.className = "page" + (extraClass ? " "+extraClass : "");
+    div.innerHTML =
+      '<div class="kicker">'+kicker+'</div>' +
+      (title ? '<h2 class="page-title">'+title+'</h2>' : '') +
+      inner +
+      '<div class="footer"><span>'+FOOT+'</span><span>'+inc()+'</span></div>';
+    (typeof target==="string" ? document.getElementById(target) : target).appendChild(div);
+    return div;
+  }
+
+  /* ============ 01 • VISION ANNUELLE ============ */
+  document.getElementById("visionPage").innerHTML =
+    '<div class="kicker">01 • Yearly Vision</div>' +
+    '<h2 class="page-title">Mon année avec le Coran</h2>' +
+    '<h3 class="blk">Mon intention pour 2027</h3>' + lines(3) +
+    '<h3 class="blk">Ce que je souhaite construire dans ma relation avec le Coran</h3>' + lines(3) +
+    '<h3 class="blk">Mes objectifs de l\'année</h3>' + lines(4) +
+    '<h3 class="blk">My word / Mon mot</h3>' +
+    '<div class="box gold center" style="text-align:center; padding:6mm;">' +
+    '<span class="field wide" style="min-width:110mm; height:10mm;"></span></div>' +
+    '<div class="cols" style="margin-top:5mm;">' +
+      '<div><h3 class="blk">Q1</h3>' + lines(3,6.5) + '</div>' +
+      '<div><h3 class="blk">Q2</h3>' + lines(3,6.5) + '</div>' +
+      '<div><h3 class="blk">Q3</h3>' + lines(3,6.5) + '</div>' +
+      '<div><h3 class="blk">Q4</h3>' + lines(3,6.5) + '</div>' +
+    '</div>' +
+    '<div class="footer"><span>'+FOOT+'</span><span>'+inc()+'</span></div>';
+
+  function miniCal(m){
+    var first = new Date(YEAR, m, 1);
+    var startCol = (first.getDay()+6)%7;
+    var days = new Date(YEAR, m+1, 0).getDate();
+    var html = '<div class="mini"><h4>'+MONTHS[m]+' '+YEAR+'</h4><table class="minical"><tr>' +
+      '<th>L</th><th>M</th><th>M</th><th>J</th><th>V</th><th>S</th><th>D</th></tr><tr>';
+    for(var c=0;c<startCol;c++) html += '<td class="blank"></td>';
+    for(var d=1; d<=days; d++){
+      var col = (startCol + d - 1) % 7;
+      if(col===0 && d>1) html += '</tr><tr>';
+      html += '<td>'+d+'</td>';
+    }
+    var lastCol = (startCol + days - 1) % 7;
+    for(var c2=lastCol+1; c2<7; c2++) html += '<td class="blank"></td>';
+    html += '</tr></table></div>';
+    return html;
+  }
+  var ov = "";
+  for(var m=0;m<12;m++) ov += miniCal(m);
+  document.getElementById("overviewPage").innerHTML =
+    '<div class="kicker">01 • Yearly Vision</div>' +
+    '<h2 class="page-title">'+YEAR+' &bull; Vue d\'ensemble</h2>' +
+    '<div class="mini-grid">'+ov+'</div>' +
+    '<div class="box" style="margin-top:5mm; font-size:3.6mm;">' +
+    'Note dans chaque mois les jalons : khatm prévu, sourates à mémoriser, cours, retraites…</div>' +
+    '<div class="footer"><span>'+FOOT+'</span><span>'+inc()+'</span></div>';
+
+  /* ============ 02 • INDEX DES 114 SOURATES ============ */
+  var idxSec = document.getElementById("sec2");
+  function surahIndexPart(from, to, partLabel){
+    var rows = "";
+    for(var i=from; i<to; i++){
+      rows += '<tr><td class="num">'+pad(i+1)+'</td><td class="name">'+esc(S[i][0])+'</td>' +
+        '<td class="ayat">'+S[i][1]+'</td>' +
+        '<td class="c"><span class="cb"></span></td><td class="c"><span class="cb"></span></td>' +
+        '<td class="c"><span class="cb"></span></td><td class="c"><span class="cb"></span></td></tr>';
+    }
+    page("02 • " + partLabel, "Index des 114 sourates",
+      '<table class="surah"><tr><th style="width:10%;">Sourate</th><th>Nom</th><th style="width:9%;">Ayat</th>' +
+      '<th style="width:9%;">Lue</th><th style="width:11%;">Étudiée</th><th style="width:14%;">Mémorisée</th>' +
+      '<th style="width:10%;">Révisée</th></tr>' + rows + '</table>', idxSec);
+  }
+  surahIndexPart(0,38,"1/3");
+  surahIndexPart(38,76,"2/3");
+  surahIndexPart(76,114,"3/3");
+
+  /* ============ 04-a • PARCOURS DE HIFDH ============ */
+  var hifSec = document.getElementById("sec3");
+  function hifdhPart(partLabel){
+    var rows = "";
+    for(var r=0;r<14;r++){
+      rows += '<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
+    }
+    page("04 • " + partLabel, "Mon parcours de Hifdh",
+      '<div class="sub">Utilise ce tableau pour n\'importe quelle sourate. Ajoute les ayat choisies et ta date cible.</div>' +
+      '<table><tr><th style="width:24%;">Sourate</th><th style="width:18%;">Plage d\'ayat</th>' +
+      '<th style="width:12%;">Début</th><th style="width:12%;">Objectif</th>' +
+      '<th style="width:16%;">Progression</th><th style="width:18%;">Statut</th></tr>' + rows + '</table>', hifSec);
+  }
+  hifdhPart("1/3"); hifdhPart("2/3"); hifdhPart("3/3");
+
+  /* ============ 04-b • JUZ AMMA ============ */
+  function juzAmmaPart(from, to, partLabel){
+    var rows = "";
+    for(var i=from;i<to;i++){
+      rows += '<tr><td class="num">'+esc(S[i][0])+'</td><td class="ayat">'+S[i][1]+'</td>' +
+        '<td></td><td class="c"><span class="cb"></span></td><td class="c"><span class="cb"></span></td>' +
+        '<td class="c"><span class="cb"></span></td></tr>';
+    }
+    page("04 • " + partLabel, "Juz Amma • Suivi de mémorisation",
+      '<table class="surah"><tr><th style="width:26%;">Sourate</th><th style="width:10%;">Ayat</th>' +
+      '<th style="width:30%;">Statut</th><th style="width:11%;">J+1</th><th style="width:11%;">J+7</th>' +
+      '<th style="width:12%;">J+30</th></tr>' + rows + '</table>', hifSec);
+  }
+  juzAmmaPart(77,96,"1/2");
+  juzAmmaPart(96,114,"2/2");
+
+  /* ============ 03 • MOIS ============ */
+  var monthSec = document.getElementById("sec4");
+  for(var m2=0; m2<12; m2++){
+    var first = new Date(YEAR, m2, 1);
+    var startCol = (first.getDay()+6)%7;
+    var days = new Date(YEAR, m2+1, 0).getDate();
+    var mk = "03 • Month " + pad(m2+1);
+
+    var cal = '<tr>';
+    ["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"].forEach(function(d){ cal += '<th>'+d+'</th>'; });
+    cal += '</tr>';
+    var dcur = 1;
+    for(var w=0; w<6 && dcur<=days; w++){
+      cal += '<tr>';
+      for(var c=0;c<7;c++){
+        if((w===0 && c<startCol) || dcur>days){ cal += '<td class="blank"></td>'; continue; }
+        cal += '<td><span class="d">'+dcur+'</span></td>';
+        dcur++;
+      }
+      cal += '</tr>';
+    }
+    page(mk, MONTHS[m2]+" "+YEAR,
+      '<h3 class="blk">Mon focus du mois</h3>' +
+      '<div class="box"><span class="field wide" style="min-width:160mm; height:7mm;"></span></div>' +
+      '<table class="cal" style="margin-top:3mm;">'+cal+'</table>' +
+      '<div class="cols" style="margin-top:4mm;">' +
+        '<div><h3 class="blk">Lecture</h3>'+lines(3,6.5)+'</div>' +
+        '<div><h3 class="blk">Mémorisation</h3>'+lines(3,6.5)+'</div>' +
+        '<div><h3 class="blk">Révision</h3>'+lines(3,6.5)+'</div>' +
+      '</div>', monthSec);
+
+    var tr = '<tr><th style="width:8%;">Date</th><th style="width:9%;">Lue</th>' +
+      '<th style="width:14%;">Mémorisée</th><th style="width:10%;">Révisée</th>' +
+      '<th style="width:17%;">Temps consacré</th><th>Notes</th></tr>';
+    for(var dd=1; dd<=days; dd++){
+      tr += '<tr><td>'+dd+'</td><td class="c"><span class="cb"></span></td>' +
+        '<td class="c"><span class="cb"></span></td><td class="c"><span class="cb"></span></td>' +
+        '<td></td><td></td></tr>';
+    }
+    page(mk, "Tracker coranique du mois",
+      '<div class="sub">Coche les jours où tu as lu, mémorisé et révisé. Utilise les notes pour les références de sourates ou d\'ayat.</div>' +
+      '<table>'+tr+'</table>', monthSec);
+
+    page(mk, "Bilan du mois",
+      '<h3 class="blk">Mes avancées</h3>'+lines(3) +
+      '<h3 class="blk">Mes difficultés</h3>'+lines(3) +
+      '<h3 class="blk">Réflexion</h3>'+lines(3) +
+      '<h3 class="blk">Gratitude</h3>'+lines(2) +
+      '<h3 class="blk">Mon intention pour le mois prochain</h3>'+lines(2), monthSec);
+  }
+
+  /* ============ 03 • SEMAINES (52) ============ */
+  var weekSec = document.getElementById("sec5");
+  for(var wk=1; wk<=52; wk++){
+    var rows = "";
+    ["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"].forEach(function(d){
+      rows += '<tr><td>'+d+'</td><td></td><td></td><td></td></tr>';
+    });
+    page("03 • Week " + pad(wk), "Mon planning hebdomadaire • " + pad(wk),
+      '<h3 class="blk">Mon intention de la semaine</h3>' +
+      '<div class="box"><span class="field wide" style="min-width:160mm; height:7mm;"></span></div>' +
+      '<h3 class="blk">Lecture / étude prévue</h3>' +
+      '<table style="margin-top:1.5mm;"><tr><th style="width:10%;">Date</th>' +
+      '<th style="width:34%;">Lecture / étude prévue</th><th style="width:28%;">Mémorisation prévue</th>' +
+      '<th>Révisions prévues</th></tr>' + rows + '</table>' +
+      '<h3 class="blk">Notes</h3>' + lines(4,6.5), weekSec);
+  }
+
+  /* ============ 04-c • PLANNING DE RÉVISION ============ */
+  var revSec = document.getElementById("sec6");
+  for(var rv=1; rv<=4; rv++){
+    var rrows = "";
+    for(var r2=0; r2<10; r2++){
+      rrows += '<tr><td></td><td></td><td class="c"><span class="cb"></span></td>' +
+        '<td class="c"><span class="cb"></span></td><td class="c"><span class="cb"></span></td>' +
+        '<td class="c"><span class="cb"></span></td><td class="c"><span class="cb"></span></td></tr>';
+    }
+    page("04 • Revision " + rv, "Planning de révision",
+      '<div class="sub">Utilise des révisions espacées pour consolider la mémorisation. Adapte les intervalles aux conseils de ton enseignant et à tes besoins.</div>' +
+      '<table><tr><th style="width:22%;">Sourate</th><th style="width:16%;">Plage d\'ayat</th>' +
+      '<th style="width:10%;">J+1</th><th style="width:10%;">J+3</th><th style="width:10%;">J+7</th>' +
+      '<th style="width:10%;">J+30</th><th style="width:22%;">Récitation vérifiée</th></tr>' + rrows + '</table>' +
+      '<h3 class="blk">Points de tajwid à retravailler</h3>' + lines(4), revSec);
+  }
+
+  /* ============ 05 • FICHES D'ÉTUDE (114) ============ */
+  var sheetSec = document.getElementById("sec7");
+  for(var s3=0; s3<114; s3++){
+    page("05 • Surah " + pad(s3+1) + "/114", "Étude &amp; réflexion sur une sourate",
+      '<div class="sheet-head">' +
+        '<span class="num">'+pad(s3+1)+'</span>' +
+        '<span class="nm"><span class="lat">'+esc(S[s3][0])+'</span><br>' +
+          '<span class="ar">'+S[s3][2]+'</span><br>' +
+          '<span class="cnt">'+S[s3][1]+' ayat</span></span>' +
+        '<span class="num" style="opacity:.25;">05</span>' +
+      '</div>' +
+      '<h3 class="blk">Contexte de révélation <span class="small">(à vérifier dans une source de tafsir fiable)</span></h3>' + lines(2) +
+      '<h3 class="blk">Thèmes et enseignements principaux</h3>' + lines(3) +
+      '<h3 class="blk">Ce que je comprends de cette sourate</h3>' + lines(3) +
+      '<h3 class="blk">Verset marquant • Référence</h3>' + lines(2) +
+      '<h3 class="blk">Comment appliquer cet enseignement dans ma vie ?</h3>' + lines(3) +
+      '<div class="cols">' +
+        '<div><h3 class="blk">Notes de tafsir</h3>'+lines(3,6.5)+'</div>' +
+        '<div><h3 class="blk">Questions à approfondir</h3>'+lines(3,6.5)+'</div>' +
+      '</div>', sheetSec);
+  }
+
+  /* ============ 06 • EXTRAS ============ */
+  var duas = "";
+  for(var k=1;k<=20;k++){
+    duas += '<div class="dua-row"><span class="n">'+k+'.</span><span class="txt"></span>' +
+      '<span class="when"></span></div>';
+  }
+  document.getElementById("duasPage").innerHTML =
+    '<div class="kicker">06 • Connect with Allah</div>' +
+    '<h2 class="page-title">Mes du\'as</h2>' +
+    '<div class="sub">Liste tes invocations ; note à droite la date d\'exaucement.</div>' + duas +
+    '<div class="footer"><span>'+FOOT+'</span><span>'+inc()+'</span></div>';
+
+  function namesTable(from, to, partLabel, targetId){
+    var rows = "";
+    for(var n=from; n<=to; n++){
+      rows += '<tr><td class="num">'+n+'</td><td></td><td></td><td></td></tr>';
+    }
+    document.getElementById(targetId).innerHTML =
+      '<div class="kicker">06 • '+partLabel+'</div>' +
+      '<h2 class="page-title">Les 99 noms d\'Allah</h2>' +
+      '<div class="sub">Note le nom, sa signification et ta réflexion. Apprends-les auprès de sources fiables.</div>' +
+      '<table class="names"><tr><th style="width:8%;">#</th><th style="width:28%;">Nom</th>' +
+      '<th style="width:30%;">Signification</th><th>Réflexion</th></tr>' + rows + '</table>' +
+      '<div class="footer"><span>'+FOOT+'</span><span>'+inc()+'</span></div>';
+  }
+  namesTable(1,50,"1/2","names1");
+  namesTable(51,99,"2/2","names2");
+
+  var prows = "";
+  for(var pr=1; pr<=25; pr++){
+    prows += '<tr><td class="num">'+pr+'</td><td></td><td></td><td></td></tr>';
+  }
+  document.getElementById("prophetsPage").innerHTML =
+    '<div class="kicker">06 • Prophet Reflection</div>' +
+    '<h2 class="page-title">Les prophètes mentionnés dans le Coran</h2>' +
+    '<div class="sub">Note le prophète, les références coraniques et les enseignements retenus. Cette liste est un support d\'étude, pas un tafsir.</div>' +
+    '<table class="names"><tr><th style="width:8%;">#</th><th style="width:28%;">Prophète</th>' +
+    '<th style="width:30%;">Référence coranique</th><th>Enseignements</th></tr>' + prows + '</table>' +
+    '<div class="footer"><span>'+FOOT+'</span><span>'+inc()+'</span></div>';
+
+  var grat = "";
+  for(var g=1; g<=3; g++){
+    grat += '<div class="box gold" style="margin:3mm 0;"><b class="green">Gratitude '+g+'</b>' + lines(2,6.5) + '</div>';
+  }
+  document.getElementById("gratitudePage").innerHTML =
+    '<div class="kicker">06 • Connect with Allah</div>' +
+    '<h2 class="page-title">Mes trois gratitudes</h2>' +
+    '<div class="sub">Chaque jour ou chaque semaine, note trois bénédictions pour lesquelles tu rends grâce.</div>' +
+    grat + '<h3 class="blk">Réflexion</h3>' + lines(4) +
+    '<div class="footer"><span>'+FOOT+'</span><span>'+inc()+'</span></div>';
+
+  document.getElementById("letterPage").innerHTML =
+    '<div class="kicker">06 • Connect with Allah</div>' +
+    '<h2 class="page-title">Lettre / réflexion personnelle</h2>' +
+    '<div class="sub">Écris librement à Allah ou à toi-même : ce que tu vis, ce que tu espères, ce que le Coran éveille en toi.</div>' +
+    lines(24,8.2) +
+    '<div class="footer"><span>'+FOOT+'</span><span>'+inc()+'</span></div>';
+
+  document.getElementById("yearReviewPage").innerHTML =
+    '<div class="kicker">01 • Yearly Vision</div>' +
+    '<h2 class="page-title">Bilan de mon année '+YEAR+'</h2>' +
+    '<h3 class="blk">Ce que le Coran m\'a appris cette année</h3>' + lines(4) +
+    '<h3 class="blk">Comment ma relation avec le Coran a évolué</h3>' + lines(4) +
+    '<h3 class="blk">Ce que je veux poursuivre en '+(YEAR+1)+'</h3>' + lines(4) +
+    '<div class="box" style="margin-top:5mm; font-size:3.6mm;">' +
+    'Relis tes bilans de mois, tes fiches d\'étude et ton intention de janvier avant de remplir cette page.</div>' +
+    '<div class="footer"><span>'+FOOT+'</span><span>'+inc()+'</span></div>';
+
+  /* ============ Barre d'impression ============ */
+  var boxes = document.querySelectorAll("#bar input[data-sec]");
+  function apply(){
+    boxes.forEach(function(b){
+      var sec = document.getElementById(b.dataset.sec);
+      if(sec) sec.classList.toggle("print-off", !b.checked);
+    });
+  }
+  boxes.forEach(function(b){ b.addEventListener("change", apply); });
+  document.getElementById("allOn").addEventListener("click", function(){
+    boxes.forEach(function(b){ b.checked = true; }); apply();
+  });
+  document.getElementById("allOff").addEventListener("click", function(){
+    boxes.forEach(function(b){ b.checked = false; }); apply();
+  });
+  document.getElementById("printBtn").addEventListener("click", function(){ window.print(); });
+  apply();
+})();
+</script>
+</body>
+</html>

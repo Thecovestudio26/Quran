@@ -8,7 +8,7 @@ quran-journal/
 │   ├── quran-planner-2027.html      # planner annuel 2027 A4 (225 pages, FR, imprimable)
 │   ├── quran-planner-2027-ipad.html # planner annuel 2027 iPad (4:3, navigation + cases interactives)
 │   ├── quran-planner-2027-ordi.html # planner annuel 2027 ordinateur (plein écran, saisie clavier)
-│   ├── quran-planner-2027-en-pink.html # planner annuel 2027 EN rose (imprimable, dédié à Myriam)
+│   ├── quran-planner-2027-en-pink.html # planner annuel 2027 EN rose (imprimable, dédié à Mariam)
 │   └── planner-coran-a4.html        # planner A4 mensuel compact (9 pages, FR)
 └── app-ipad/
     ├── QuranJournal.xcodeproj/      # projet Xcode (SwiftUI + SwiftData, iOS 17+)
@@ -83,7 +83,10 @@ Même planner annuel (225 pages), en anglais et en palette rose, prêt à imprim
   114 fiches d'étude et extras.
 - **Palette rose** (rose foncé `#9d174d` + rose vif `#db2777`) sur toutes les
   pages : couverture, en-têtes de tableaux, cases à cocher et barre d'impression.
-- **Crédit de couverture : Librairie Islamique 237** et **dédicace « To Myriam »**.
+- **Crédit de couverture : Librairie Islamique 237** et **dédicace pour Mariam** :
+  « For Mariam, as a sadaka, my beloved cousin, love you and may Allah guide you
+  and protect you. May we meet in this life every time and enjoy our time.
+  And in Jannah. »
 - Barre d'impression à l'écran (rose) pour choisir les sections à inclure avant
   d'imprimer, comme sur l'édition A4 française.
 

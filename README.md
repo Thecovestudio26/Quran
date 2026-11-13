@@ -1,6 +1,6 @@
 # Journal du Coran — planner imprimable + éditions numériques (iPad & ordi)
 
-Trois outils pour un journaling spirituel quotidien :
+Cinq outils pour un journaling spirituel quotidien :
 
 ```
 quran-journal/
@@ -8,6 +8,7 @@ quran-journal/
 │   ├── quran-planner-2027.html      # planner annuel 2027 A4 (225 pages, FR, imprimable)
 │   ├── quran-planner-2027-ipad.html # planner annuel 2027 iPad (4:3, navigation + cases interactives)
 │   ├── quran-planner-2027-ordi.html # planner annuel 2027 ordinateur (plein écran, saisie clavier)
+│   ├── quran-planner-2027-en-pink.html # planner annuel 2027 EN rose (imprimable, dédié à Myriam)
 │   └── planner-coran-a4.html        # planner A4 mensuel compact (9 pages, FR)
 └── app-ipad/
     ├── QuranJournal.xcodeproj/      # projet Xcode (SwiftUI + SwiftData, iOS 17+)
@@ -73,14 +74,27 @@ Même planner (225 pages), optimisé pour un usage quotidien sur ordinateur :
 > Les sauvegardes sont locales au navigateur de l'ordinateur utilisé. Ouvrir le
 > fichier dans un autre navigateur ou sur un autre ordi repart d'une page vierge.
 
-## 4. Planner mensuel compact (`planner-imprimable/planner-coran-a4.html`)
+## 4. Quran Planner 2027 — English pink edition (`planner-imprimable/quran-planner-2027-en-pink.html`)
+
+Même planner annuel (225 pages), en anglais et en palette rose, prêt à imprimer (A4) :
+
+- Structure identique à l'édition A4 française : vision annuelle, index des 114
+  sourates, Hifdh & Juz Amma, 12 mois × 3 pages, 52 semaines, révisions espacées,
+  114 fiches d'étude et extras.
+- **Palette rose** (rose foncé `#9d174d` + rose vif `#db2777`) sur toutes les
+  pages : couverture, en-têtes de tableaux, cases à cocher et barre d'impression.
+- **Crédit de couverture : Librairie Islamique 237** et **dédicace « To Myriam »**.
+- Barre d'impression à l'écran (rose) pour choisir les sections à inclure avant
+  d'imprimer, comme sur l'édition A4 française.
+
+## 5. Planner mensuel compact (`planner-imprimable/planner-coran-a4.html`)
 
 Planner A4 en français, 9 pages : couverture, objectifs du mois, calendrier du mois
 (choisir le mois/année en haut de la page 3), suivi des 30 juz, **une page journalière
 exemple remplie**, une page journalière vierge à photocopier, tracker d'habitudes sur
 4 semaines, liste de douaas, notes libres.
 
-## 5. App iPad (`app-ipad/`)
+## 6. App iPad (`app-ipad/`)
 
 App SwiftUI native, optimisée iPad (NavigationSplitView), iOS/iPadOS 17+ (SwiftData) :
 

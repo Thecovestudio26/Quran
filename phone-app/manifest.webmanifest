@@ -1,0 +1,17 @@
+{
+  "name": "Quran Planner 2027",
+  "short_name": "Quran 2027",
+  "description": "My Quran Journey 2027 — full planner with automatic save on your phone.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fdfaf4",
+  "theme_color": "#5f4a36",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

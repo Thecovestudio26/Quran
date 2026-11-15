@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F6D729337968BBF443672028 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDC610DC06EFDBD293B8518 /* Models.swift */; };
+		BD9D5ED7A3E12C0BB9F59269 /* QuranData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0902F7F125E5FBCC8FD29C33 /* QuranData.swift */; };
+		ED4B32D2A8022C23E6B79788 /* QuranJournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D9AB82D32F1117414AEF511 /* QuranJournalApp.swift */; };
+		C63E359494E5F3C6AB377951 /* MarkdownExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE02A5C3D65A5FE098844F2F /* MarkdownExport.swift */; };
+		319E44AFC4205640A42CE49D /* PrintExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A27F53307125EB707A10C2 /* PrintExport.swift */; };
+		6D6C89D53E40B7F0DEC47D70 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93AC7BA8CA8EDAC81CFAEFF /* ShareSheet.swift */; };
+		976B38AA8CB49D7754EF1CE5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA7F6B171A8020E8698A6C9 /* HomeView.swift */; };
+		B094FFAB608388C261540945 /* JournalEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810A021CC3497ABDFEC837F /* JournalEditorView.swift */; };
+		0E6918C515F29ACD35628FC6 /* JournalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96F049966C1CF2BCCC85D1 /* JournalListView.swift */; };
+		1DC1BD36E96BB4F259C8D710 /* PlannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0809DD5FA4834F03D8A99C /* PlannerView.swift */; };
+		CAF63E89F3BB11CDD7D5E76B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC8F9B50E0CA5CACE16BB40 /* RootView.swift */; };
+		5A048A5962D239BE0A1D024E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D1FC7E20CAFB535E6B1E9F /* SettingsView.swift */; };
+		99B7D48331F19D9CF75C6FB7 /* SurahDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD32DA252D66C03FE7C388ED /* SurahDetailView.swift */; };
+		D07F2ED25CF6D1C4F15307BD /* SurahsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760B8059459031BB6855A9DA /* SurahsView.swift */; };
+		B1202C7A8238826DC782F5A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28AAD1477D5182D66D4B03B3 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1CDC610DC06EFDBD293B8518 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		0902F7F125E5FBCC8FD29C33 /* QuranData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranData.swift; sourceTree = "<group>"; };
+		8D9AB82D32F1117414AEF511 /* QuranJournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranJournalApp.swift; sourceTree = "<group>"; };
+		CE02A5C3D65A5FE098844F2F /* MarkdownExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownExport.swift; sourceTree = "<group>"; };
+		48A27F53307125EB707A10C2 /* PrintExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintExport.swift; sourceTree = "<group>"; };
+		C93AC7BA8CA8EDAC81CFAEFF /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		3CA7F6B171A8020E8698A6C9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4810A021CC3497ABDFEC837F /* JournalEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEditorView.swift; sourceTree = "<group>"; };
+		3A96F049966C1CF2BCCC85D1 /* JournalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalListView.swift; sourceTree = "<group>"; };
+		1A0809DD5FA4834F03D8A99C /* PlannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerView.swift; sourceTree = "<group>"; };
+		9CC8F9B50E0CA5CACE16BB40 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		B4D1FC7E20CAFB535E6B1E9F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BD32DA252D66C03FE7C388ED /* SurahDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahDetailView.swift; sourceTree = "<group>"; };
+		760B8059459031BB6855A9DA /* SurahsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahsView.swift; sourceTree = "<group>"; };
+		8BCD5BC4CDFDF0918087C782 /* QuranJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28AAD1477D5182D66D4B03B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7B594B6DB375E1BF3F23CDD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		69BE8A4D8E4D9DA4E7DB3928 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E50290A24C49A459B43487C5 = {
+			isa = PBXGroup;
+			children = (
+				69F8D45498D7E20DA99BB780 /* QuranJournal */,
+				328EC33DF3954DC9B83FA285 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		328EC33DF3954DC9B83FA285 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BCD5BC4CDFDF0918087C782 /* QuranJournal.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		69F8D45498D7E20DA99BB780 = {
+			isa = PBXGroup;
+			children = (
+				8D9AB82D32F1117414AEF511 /* QuranJournalApp.swift */,
+				BF657CFE8769AAE6C0570C29 /* Models */,
+				7CE75CD7A6F38545D3BDC99D /* Utilities */,
+				58492F208780FA5EF3807E8F /* Views */,
+				28AAD1477D5182D66D4B03B3 /* Assets.xcassets */,
+				7B594B6DB375E1BF3F23CDD6 /* Info.plist */,
+			);
+			path = QuranJournal; sourceTree = "<group>";
+		};
+		BF657CFE8769AAE6C0570C29 = {
+			isa = PBXGroup;
+			children = (
+				1CDC610DC06EFDBD293B8518 /* Models.swift */,
+				0902F7F125E5FBCC8FD29C33 /* QuranData.swift */,
+			);
+			path = "Models"; sourceTree = "<group>";
+		};
+		7CE75CD7A6F38545D3BDC99D = {
+			isa = PBXGroup;
+			children = (
+				CE02A5C3D65A5FE098844F2F /* MarkdownExport.swift */,
+				48A27F53307125EB707A10C2 /* PrintExport.swift */,
+				C93AC7BA8CA8EDAC81CFAEFF /* ShareSheet.swift */,
+			);
+			path = "Utilities"; sourceTree = "<group>";
+		};
+		58492F208780FA5EF3807E8F = {
+			isa = PBXGroup;
+			children = (
+				3CA7F6B171A8020E8698A6C9 /* HomeView.swift */,
+				4810A021CC3497ABDFEC837F /* JournalEditorView.swift */,
+				3A96F049966C1CF2BCCC85D1 /* JournalListView.swift */,
+				1A0809DD5FA4834F03D8A99C /* PlannerView.swift */,
+				9CC8F9B50E0CA5CACE16BB40 /* RootView.swift */,
+				B4D1FC7E20CAFB535E6B1E9F /* SettingsView.swift */,
+				BD32DA252D66C03FE7C388ED /* SurahDetailView.swift */,
+				760B8059459031BB6855A9DA /* SurahsView.swift */,
+			);
+			path = "Views"; sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E8A3AD980EC179856012B7E /* QuranJournal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B483F6EB73610DE752E457A0 /* Build configuration list for PBXNativeTarget "QuranJournal" */;
+			buildPhases = (
+				4E57AE888889001C06A4F7E8 /* Sources */,
+				69BE8A4D8E4D9DA4E7DB3928 /* Frameworks */,
+				D6C9E8A172005E68A1DD674F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuranJournal;
+			productName = QuranJournal;
+			productReference = 8BCD5BC4CDFDF0918087C782 /* QuranJournal.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98F54143AB4E86B28C3AFEE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+			};
+			buildConfigurationList = 550FEBBE252641242DA80FDE /* Build configuration list for PBXProject "QuranJournal" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E50290A24C49A459B43487C5;
+			productRefGroup = 328EC33DF3954DC9B83FA285 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E8A3AD980EC179856012B7E /* QuranJournal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D6C9E8A172005E68A1DD674F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1202C7A8238826DC782F5A0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E57AE888889001C06A4F7E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6D729337968BBF443672028 /* Models.swift in Sources */,
+				BD9D5ED7A3E12C0BB9F59269 /* QuranData.swift in Sources */,
+				ED4B32D2A8022C23E6B79788 /* QuranJournalApp.swift in Sources */,
+				C63E359494E5F3C6AB377951 /* MarkdownExport.swift in Sources */,
+				319E44AFC4205640A42CE49D /* PrintExport.swift in Sources */,
+				6D6C89D53E40B7F0DEC47D70 /* ShareSheet.swift in Sources */,
+				976B38AA8CB49D7754EF1CE5 /* HomeView.swift in Sources */,
+				B094FFAB608388C261540945 /* JournalEditorView.swift in Sources */,
+				0E6918C515F29ACD35628FC6 /* JournalListView.swift in Sources */,
+				1DC1BD36E96BB4F259C8D710 /* PlannerView.swift in Sources */,
+				CAF63E89F3BB11CDD7D5E76B /* RootView.swift in Sources */,
+				5A048A5962D239BE0A1D024E /* SettingsView.swift in Sources */,
+				99B7D48331F19D9CF75C6FB7 /* SurahDetailView.swift in Sources */,
+				D07F2ED25CF6D1C4F15307BD /* SurahsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D08DD63EED508AD30D0CB0B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		811CB99F7A296F7846C18A7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDA287C7C64DC2E983A802E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = QuranJournal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.quranjournal.journal";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88E6700796B683108D5F4889 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = QuranJournal/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.quranjournal.journal";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		550FEBBE252641242DA80FDE /* Build configuration list for PBXProject "QuranJournal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D08DD63EED508AD30D0CB0B4 /* Debug */,
+				811CB99F7A296F7846C18A7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B483F6EB73610DE752E457A0 /* Build configuration list for PBXNativeTarget "QuranJournal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDA287C7C64DC2E983A802E8 /* Debug */,
+				88E6700796B683108D5F4889 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+}

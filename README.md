@@ -1,0 +1,179 @@
+# Journal du Coran — planner imprimable + éditions numériques (iPad, ordi, téléphone & app)
+
+Huit outils pour un journaling spirituel quotidien, dont une **app installable sur
+téléphone** (section 8) :
+
+```
+quran-journal/
+├── planner-imprimable/
+│   ├── quran-planner-2027.html      # planner annuel 2027 A4 (225 pages, FR, imprimable)
+│   ├── quran-planner-2027-ipad.html # planner annuel 2027 iPad (4:3, navigation + cases interactives)
+│   ├── quran-planner-2027-ordi.html # planner annuel 2027 ordinateur (plein écran, saisie clavier)
+│   ├── quran-planner-2027-en-beige.html # planner annuel 2027 EN beige (imprimable, dédié à Mariam)
+│   ├── quran-planner-2027-en-phone.html # planner annuel 2027 EN beige téléphone (interactif)
+│   └── planner-coran-a4.html        # planner A4 mensuel compact (9 pages, FR)
+├── app-ipad/
+│   ├── QuranJournal.xcodeproj/      # projet Xcode (SwiftUI + SwiftData, iOS 17+)
+│   ├── QuranJournal/                # sources de l'app
+│   └── tools/generate_project.py    # régénère le pbxproj + les icônes
+├── phone-app/                       # app téléphone installable (PWA)
+│   ├── index.html                   # planner complet (225 pages, EN beige, interactif)
+│   ├── manifest.webmanifest          # manifeste PWA (icône, couleurs, plein écran)
+│   ├── sw.js                        # service worker (fonctionne hors ligne)
+│   └── make-icons.js                # génère les icônes PNG (lancé par le workflow)
+└── .github/workflows/deploy-app.yml # déploiement automatique sur GitHub Pages
+```
+
+## 1. Quran Planner 2027 — édition A4 (`planner-imprimable/quran-planner-2027.html`)
+
+Planner annuel complet de 225 pages en français, fidèle au modèle « Quran Planner 2027 » :
+
+- **01 My Year with the Quran** : vision annuelle (intention, objectifs, mot de l'année,
+  Q1-Q4), vue d'ensemble des 12 calendriers 2027 et bilan de fin d'année.
+- **02 114-Surah Index** : les 114 sourates (nom, nombre d'ayat) avec suivi
+  lecture / étude / mémorisation / révision.
+- **03 Monthly & Weekly Planning** : 12 mois × 3 pages (focus du mois + calendrier,
+  tracker coranique quotidien, bilan du mois) et 52 plannings hebdomadaires.
+- **04 Hifdh & Revision** : parcours de Hifdh libre, suivi Juz Amma (J+1 / J+7 / J+30)
+  et 4 plannings de révision espacée.
+- **05 Study Sheets** : 114 fiches d'étude et de réflexion (contexte, thèmes,
+  verset marquant, application, questions).
+- **06 Connect with Allah** : du'as, 99 noms d'Allah, prophètes du Coran,
+  gratitudes, lettre personnelle.
+
+À l'écran, une barre verte permet de cocher les sections à inclure avant
+d'imprimer (masquée automatiquement à l'impression).
+
+**Imprimer depuis l'iPad :** ouvrir le fichier dans Safari (AirDrop / Fichiers / iCloud)
+→ choisir les sections dans la barre verte → « Imprimer » (A4, recto ou recto-verso).
+Option « Enregistrer en PDF » pour une copie numérique.
+
+## 2. Quran Planner 2027 — édition iPad (`planner-imprimable/quran-planner-2027-ipad.html`)
+
+Même planner (225 pages) au format 4:3 portrait (186 × 248 mm) pour un usage
+numérique sur iPad :
+
+- **Navigation par onglets** : barre verte pour sauter à une section, un mois
+  (Jan → Déc), les semaines, les révisions, les fiches ou les extras.
+- **Cases à cocher interactives** : dans Safari, taper une case la coche /
+  la décoche ; l'état est sauvegardé automatiquement sur l'iPad.
+- **Écriture manuscrite** : Safari → Partager → Imprimer → pincer l'aperçu pour
+  générer un PDF → ouvrir dans GoodNotes / Notability avec l'Apple Pencil.
+
+## 3. Quran Planner 2027 — édition ordinateur (`planner-imprimable/quran-planner-2027-ordi.html`)
+
+Même planner (225 pages), optimisé pour un usage quotidien sur ordinateur :
+
+- **Navigation latérale fixe** : sections, mois (Jan → Déc), semaines, révisions,
+  fiches et extras accessibles en un clic.
+- **Saisie au clavier** : toutes les lignes pointillées et les cellules vides des
+  tableaux (trackers, Hifdh, semaines, fiches d'étude, du'as, 99 noms…) sont
+  directement saisissables au clavier.
+- **Sauvegarde automatique** : cases cochées et textes sont enregistrés dans le
+  navigateur (localStorage, clés dédiées à l'édition ordi) et restaurés à chaque
+  ouverture.
+- **Compteur de progression** : nombre de cases cochées et barre d'avancement
+  dans la barre latérale.
+- **Impression / PDF** : bouton « Imprimer / PDF » (ou Ctrl+P) ; la barre latérale
+  est automatiquement masquée.
+- **Effacement** : bouton « Effacer mes saisies » pour repartir de zéro
+  (confirmation demandée).
+
+> Les sauvegardes sont locales au navigateur de l'ordinateur utilisé. Ouvrir le
+> fichier dans un autre navigateur ou sur un autre ordi repart d'une page vierge.
+
+## 4. Quran Planner 2027 — English beige edition (`planner-imprimable/quran-planner-2027-en-beige.html`)
+
+Même planner annuel (225 pages), en anglais et en palette beige, prêt à imprimer (A4) :
+
+- Structure identique à l'édition A4 française : vision annuelle, index des 114
+  sourates, Hifdh & Juz Amma, 12 mois × 3 pages, 52 semaines, révisions espacées,
+  114 fiches d'étude et extras.
+- **Palette beige** (brun profond `#5f4a36` + taupe doré `#b08d57`) sur toutes les
+  pages : couverture, en-têtes de tableaux, cases à cocher et barre d'impression.
+- **Crédit de couverture : Librairie Islamique 237** et **dédicace pour Mariam** :
+  « For Mariam, as a sadaka, my beloved cousin, love you and may Allah guide you
+  and protect you. May we meet in this life every time and enjoy our time.
+  And in Jannah. »
+- Barre d'impression à l'écran (beige) pour choisir les sections à inclure avant
+  d'imprimer, comme sur l'édition A4 française.
+
+## 5. Quran Planner 2027 — édition téléphone (`planner-imprimable/quran-planner-2027-en-phone.html`)
+
+Même planner (225 pages, anglais, beige) pour un usage quotidien sur téléphone :
+
+- **Barre supérieure + menu coulissant** : sections, mois (Jan → Déc), semaines,
+  révisions, fiches et extras accessibles d'un tap.
+- **Cases à cocher tactiles** (22 px) : un tap pour cocher / décocher.
+- **Saisie au clavier du téléphone** : lignes pointillées et cellules vides des
+  tableaux directement saisissables.
+- **Sauvegarde automatique** sur le téléphone (localStorage, clés dédiées) :
+  tout est restauré à la réouverture, même après fermeture.
+- **Compteur de progression** dans le menu + compteur compact dans la barre du haut.
+- **Ajouter à l'écran d'accueil** : Safari → Partager → « Sur l'écran d'accueil »
+  pour l'utiliser comme une app.
+- Boutons « Print » et « Clear my entries » (avec confirmation) dans le menu.
+
+## 6. Planner mensuel compact (`planner-imprimable/planner-coran-a4.html`)
+
+Planner A4 en français, 9 pages : couverture, objectifs du mois, calendrier du mois
+(choisir le mois/année en haut de la page 3), suivi des 30 juz, **une page journalière
+exemple remplie**, une page journalière vierge à photocopier, tracker d'habitudes sur
+4 semaines, liste de douaas, notes libres.
+
+## 7. App iPad (`app-ipad/`)
+
+App SwiftUI native, optimisée iPad (NavigationSplitView), iOS/iPadOS 17+ (SwiftData) :
+
+- **Accueil** : verset du jour (arabe + français), date hégirienne, série de jours,
+  statistiques, bouton « réflexion du jour ».
+- **Journal** : entrées avec titre, texte, humeur, étiquettes, référence de sourate ;
+  recherche, suppression par balayage.
+- **Sourates** : les 114 sourates (noms FR/AR, nombre de versets), recherche, suivi de
+  lecture et de mémorisation en %.
+- **Planning** : calendrier mensuel avec les entrées du journal marquées par des points.
+- **Réglages** : export du journal en Markdown (partage) et **impression AirPrint**.
+
+Données 100 % locales (SwiftData, aucun réseau).
+
+### Ouvrir dans Xcode
+
+1. Double-cliquer sur `app-ipad/QuranJournal.xcodeproj` (macOS + Xcode 15+ recommandé).
+2. Sélectionner une équipe de développement dans *Signing & Capabilities* si besoin,
+   ou laisser « Automatically manage signing » avec un Apple ID gratuit.
+3. Choisir une cible iPad (ou « Any iOS Device ») → ▶ Run.
+
+Le bundle ID par défaut est `app.quranjournal.journal` — à personnaliser dans
+*Signing & Capabilities* / build settings (`PRODUCT_BUNDLE_IDENTIFIER`).
+
+> Si le projet est régénéré (`python3 tools/generate_project.py`, nécessite `pip install pillow`),
+> les icônes et le `project.pbxproj` sont recréés automatiquement.
+
+## 8. App téléphone installable (`phone-app/` — PWA sur GitHub Pages)
+
+L'édition téléphone devient une **vraie app installable** (PWA) : icône sur l'écran
+d'accueil, ouverture en plein écran sans barre de navigateur, et **fonctionnement
+hors ligne** (service worker). Toutes les cases cochées et les textes restent
+enregistrés sur le téléphone.
+
+**Site publié :** https://thecovestudio26.github.io/Quran/
+(déployé automatiquement par le workflow `.github/workflows/deploy-app.yml` à
+chaque push sur la branche ; les icônes PNG sont générées par `make-icons.js`).
+
+### Installer sur l'écran d'accueil
+
+- **iPhone (Safari)** : ouvrir le lien → bouton Partager (carré avec flèche) →
+  « Sur l'écran d'accueil » → Ajouter.
+- **Android (Chrome)** : ouvrir le lien → menu ⋮ → « Ajouter à l'écran d'accueil »
+  (ou bannière « Installer l'application »).
+
+L'app s'ouvre alors comme une application, même sans connexion après la première
+visite. Pour mettre à jour le planner, il suffit de repousser le dossier
+`phone-app/` : le site se redéploie tout seul.
+
+### Licence des versets
+
+Les traductions françaises des versets sont celles de Muhammad Hamidullah (diffusion
+Tanzil), reproduites ici à titre indicatif pour un **usage personnel et non commercial**.
+Avant toute diffusion publique de l'app, remplacer par une traduction sous licence
+adaptée et créditer sa source.

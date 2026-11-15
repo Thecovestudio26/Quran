@@ -1,6 +1,7 @@
-# Journal du Coran — planner imprimable + éditions numériques (iPad, ordi & téléphone)
+# Journal du Coran — planner imprimable + éditions numériques (iPad, ordi, téléphone & app)
 
-Sept outils pour un journaling spirituel quotidien :
+Huit outils pour un journaling spirituel quotidien, dont une **app installable sur
+téléphone** (section 8) :
 
 ```
 quran-journal/
@@ -11,10 +12,16 @@ quran-journal/
 │   ├── quran-planner-2027-en-beige.html # planner annuel 2027 EN beige (imprimable, dédié à Mariam)
 │   ├── quran-planner-2027-en-phone.html # planner annuel 2027 EN beige téléphone (interactif)
 │   └── planner-coran-a4.html        # planner A4 mensuel compact (9 pages, FR)
-└── app-ipad/
-    ├── QuranJournal.xcodeproj/      # projet Xcode (SwiftUI + SwiftData, iOS 17+)
-    ├── QuranJournal/                # sources de l'app
-    └── tools/generate_project.py    # régénère le pbxproj + les icônes
+├── app-ipad/
+│   ├── QuranJournal.xcodeproj/      # projet Xcode (SwiftUI + SwiftData, iOS 17+)
+│   ├── QuranJournal/                # sources de l'app
+│   └── tools/generate_project.py    # régénère le pbxproj + les icônes
+├── phone-app/                       # app téléphone installable (PWA)
+│   ├── index.html                   # planner complet (225 pages, EN beige, interactif)
+│   ├── manifest.webmanifest          # manifeste PWA (icône, couleurs, plein écran)
+│   ├── sw.js                        # service worker (fonctionne hors ligne)
+│   └── make-icons.js                # génère les icônes PNG (lancé par le workflow)
+└── .github/workflows/deploy-app.yml # déploiement automatique sur GitHub Pages
 ```
 
 ## 1. Quran Planner 2027 — édition A4 (`planner-imprimable/quran-planner-2027.html`)
@@ -141,6 +148,28 @@ Le bundle ID par défaut est `app.quranjournal.journal` — à personnaliser dan
 
 > Si le projet est régénéré (`python3 tools/generate_project.py`, nécessite `pip install pillow`),
 > les icônes et le `project.pbxproj` sont recréés automatiquement.
+
+## 8. App téléphone installable (`phone-app/` — PWA sur GitHub Pages)
+
+L'édition téléphone devient une **vraie app installable** (PWA) : icône sur l'écran
+d'accueil, ouverture en plein écran sans barre de navigateur, et **fonctionnement
+hors ligne** (service worker). Toutes les cases cochées et les textes restent
+enregistrés sur le téléphone.
+
+**Site publié :** https://thecovestudio26.github.io/Quran/
+(déployé automatiquement par le workflow `.github/workflows/deploy-app.yml` à
+chaque push sur la branche ; les icônes PNG sont générées par `make-icons.js`).
+
+### Installer sur l'écran d'accueil
+
+- **iPhone (Safari)** : ouvrir le lien → bouton Partager (carré avec flèche) →
+  « Sur l'écran d'accueil » → Ajouter.
+- **Android (Chrome)** : ouvrir le lien → menu ⋮ → « Ajouter à l'écran d'accueil »
+  (ou bannière « Installer l'application »).
+
+L'app s'ouvre alors comme une application, même sans connexion après la première
+visite. Pour mettre à jour le planner, il suffit de repousser le dossier
+`phone-app/` : le site se redéploie tout seul.
 
 ### Licence des versets
 

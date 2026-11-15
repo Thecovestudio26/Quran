@@ -1,6 +1,6 @@
 /* Quran Planner 2027 — service worker
    Caches the whole app for offline use once installed. */
-var CACHE = "quran-planner-2027-v1";
+var CACHE = "quran-planner-2027-v1.1";
 var ASSETS = [
   "./",
   "./index.html",

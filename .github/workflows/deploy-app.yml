@@ -30,6 +30,19 @@ jobs:
       - name: Generate app icons (PNG)
         run: node phone-app/make-icons.js
 
+      - name: Enable GitHub Pages if needed
+        run: |
+          code=$(curl -s -o /tmp/pages.json -w "%{http_code}" -X POST \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pages" \
+            -d '{"build_type":"workflow"}')
+          echo "Enable Pages HTTP $code"
+          cat /tmp/pages.json
+          if [ "$code" != "201" ] && [ "$code" != "409" ]; then
+            echo "::warning::Could not enable Pages (HTTP $code). Enable it in Settings > Pages with Source 'GitHub Actions'."
+          fi
+
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5

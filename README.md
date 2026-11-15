@@ -1,6 +1,6 @@
-# Journal du Coran — planner imprimable + éditions numériques (iPad & ordi)
+# Journal du Coran — planner imprimable + éditions numériques (iPad, ordi & téléphone)
 
-Cinq outils pour un journaling spirituel quotidien :
+Sept outils pour un journaling spirituel quotidien :
 
 ```
 quran-journal/
@@ -8,7 +8,8 @@ quran-journal/
 │   ├── quran-planner-2027.html      # planner annuel 2027 A4 (225 pages, FR, imprimable)
 │   ├── quran-planner-2027-ipad.html # planner annuel 2027 iPad (4:3, navigation + cases interactives)
 │   ├── quran-planner-2027-ordi.html # planner annuel 2027 ordinateur (plein écran, saisie clavier)
-│   ├── quran-planner-2027-en-pink.html # planner annuel 2027 EN rose (imprimable, dédié à Mariam)
+│   ├── quran-planner-2027-en-beige.html # planner annuel 2027 EN beige (imprimable, dédié à Mariam)
+│   ├── quran-planner-2027-en-phone.html # planner annuel 2027 EN beige téléphone (interactif)
 │   └── planner-coran-a4.html        # planner A4 mensuel compact (9 pages, FR)
 └── app-ipad/
     ├── QuranJournal.xcodeproj/      # projet Xcode (SwiftUI + SwiftData, iOS 17+)
@@ -74,30 +75,46 @@ Même planner (225 pages), optimisé pour un usage quotidien sur ordinateur :
 > Les sauvegardes sont locales au navigateur de l'ordinateur utilisé. Ouvrir le
 > fichier dans un autre navigateur ou sur un autre ordi repart d'une page vierge.
 
-## 4. Quran Planner 2027 — English pink edition (`planner-imprimable/quran-planner-2027-en-pink.html`)
+## 4. Quran Planner 2027 — English beige edition (`planner-imprimable/quran-planner-2027-en-beige.html`)
 
-Même planner annuel (225 pages), en anglais et en palette rose, prêt à imprimer (A4) :
+Même planner annuel (225 pages), en anglais et en palette beige, prêt à imprimer (A4) :
 
 - Structure identique à l'édition A4 française : vision annuelle, index des 114
   sourates, Hifdh & Juz Amma, 12 mois × 3 pages, 52 semaines, révisions espacées,
   114 fiches d'étude et extras.
-- **Palette rose** (rose foncé `#9d174d` + rose vif `#db2777`) sur toutes les
+- **Palette beige** (brun profond `#5f4a36` + taupe doré `#b08d57`) sur toutes les
   pages : couverture, en-têtes de tableaux, cases à cocher et barre d'impression.
 - **Crédit de couverture : Librairie Islamique 237** et **dédicace pour Mariam** :
   « For Mariam, as a sadaka, my beloved cousin, love you and may Allah guide you
   and protect you. May we meet in this life every time and enjoy our time.
   And in Jannah. »
-- Barre d'impression à l'écran (rose) pour choisir les sections à inclure avant
+- Barre d'impression à l'écran (beige) pour choisir les sections à inclure avant
   d'imprimer, comme sur l'édition A4 française.
 
-## 5. Planner mensuel compact (`planner-imprimable/planner-coran-a4.html`)
+## 5. Quran Planner 2027 — édition téléphone (`planner-imprimable/quran-planner-2027-en-phone.html`)
+
+Même planner (225 pages, anglais, beige) pour un usage quotidien sur téléphone :
+
+- **Barre supérieure + menu coulissant** : sections, mois (Jan → Déc), semaines,
+  révisions, fiches et extras accessibles d'un tap.
+- **Cases à cocher tactiles** (22 px) : un tap pour cocher / décocher.
+- **Saisie au clavier du téléphone** : lignes pointillées et cellules vides des
+  tableaux directement saisissables.
+- **Sauvegarde automatique** sur le téléphone (localStorage, clés dédiées) :
+  tout est restauré à la réouverture, même après fermeture.
+- **Compteur de progression** dans le menu + compteur compact dans la barre du haut.
+- **Ajouter à l'écran d'accueil** : Safari → Partager → « Sur l'écran d'accueil »
+  pour l'utiliser comme une app.
+- Boutons « Print » et « Clear my entries » (avec confirmation) dans le menu.
+
+## 6. Planner mensuel compact (`planner-imprimable/planner-coran-a4.html`)
 
 Planner A4 en français, 9 pages : couverture, objectifs du mois, calendrier du mois
 (choisir le mois/année en haut de la page 3), suivi des 30 juz, **une page journalière
 exemple remplie**, une page journalière vierge à photocopier, tracker d'habitudes sur
 4 semaines, liste de douaas, notes libres.
 
-## 6. App iPad (`app-ipad/`)
+## 7. App iPad (`app-ipad/`)
 
 App SwiftUI native, optimisée iPad (NavigationSplitView), iOS/iPadOS 17+ (SwiftData) :
 
